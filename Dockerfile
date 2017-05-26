@@ -12,12 +12,6 @@ RUN apt-get update \
  && apt-get install -yq --no-install-recommends \
     build-essential \
     git \
-    libffi-dev \
-    libpq-dev \
-    nano \
-    python-pip \
-    python3-dev \
-    python3-pip \
     vim \
     wget \
  && apt-get autoremove \
@@ -33,7 +27,7 @@ RUN apt-get install -y \
     make \
     perl
 
-ENV OPENRESTY_VERSION 1.11.2.2
+ENV OPENRESTY_VERSION 1.11.2.3
 
 RUN echo "==> Downloading OpenResty..." \
  && wget -O /tmp/openresty.tar.gz http://openresty.org/download/openresty-${OPENRESTY_VERSION}.tar.gz \
