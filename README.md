@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/3Blades/openresty.svg?branch=master)](https://travis-ci.org/3Blades/openresty)
 [![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/3blades/openresty)
 [![slack in](https://slackin-rkedwqasme.now.sh/badge.svg)](https://slackin-rkedwqasme.now.sh/)
 
