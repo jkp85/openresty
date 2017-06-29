@@ -14,9 +14,9 @@ script:
   #build the image
   - docker build --no-cache -t $DOCKER_IMAGE_NAME .
   #tag image
-  - docker tag 3blades/openresty 3blades/openresty:build-$TRAVIS_BUILD_NUMBER
+  - docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_NAME:build-$TRAVIS_BUILD_NUMBER
   #push image
-  - docker push 3blades/openresty:build-$TRAVIS_BUILD_NUMBER
+  - docker push $DOCKER_IMAGE_NAME:build-$TRAVIS_BUILD_NUMBER
 notifications:
   slack: 3blades:0lcWo2AurVy41XkVdyFVejCG
 env:
