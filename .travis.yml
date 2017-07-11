@@ -1,24 +1,16 @@
 
 # whitelist
-branches:  
+branches:
   only:
     - master
     - staging
     - production
-services:  
+services:
 #Enable docker service inside travis
   - docker
-before_install:  
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-script: 
+script:
   #build the image
-  - docker build --no-cache -t $DOCKER_IMAGE_NAME .
-  #tag image
-  - docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_NAME:build-$TRAVIS_BUILD_NUMBER
-  - docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_NAME:latest
-  #push image
-  - docker push $DOCKER_IMAGE_NAME:build-$TRAVIS_BUILD_NUMBER
-  - docker push $DOCKER_IMAGE_NAME:latest
+  - bash config/buildDockerImage.sh
 notifications:
   slack: 3blades:2UxzPYWeoYbj80mCt5MdYeez
 env:
